@@ -32,13 +32,9 @@ public class Circle {
     
     // Distance between points = sqrt((x2 - x1)^2 + (y2 - y1)^2)
     public boolean contains(Point p) {
+        double distanceFromCenter = this.center.distanceTo(p);
         
-        double xDifferenceSquared = (p.getX() - this.center.getX()) * (p.getX() - this.center.getX());
-        double yDifferenceSquared = (p.getY() - this.center.getY()) * (p.getY() - this.center.getY());
-        
-        double pointDistanceFromCenter = Math.sqrt(xDifferenceSquared + yDifferenceSquared);
-        
-        if (pointDistanceFromCenter > this.radius) {
+        if (distanceFromCenter > this.radius) {
             return false;
         }
         
@@ -51,12 +47,7 @@ public class Circle {
     // if the euclidian distance between circle centers is less than the sum of their radii
     // return true
     public boolean contains (Circle c) {
-        double distanceBetweenCenters = Math.sqrt(
-                Math.pow((c.center.getX() - this.center.getX()), 2)
-                +
-                Math.pow((c.center.getY() - this.center.getY()), 2)
-        );
-        
+        double distanceBetweenCenters = this.center.distanceTo(c.getCenter());
         return distanceBetweenCenters <= c.getRadius() + this.radius;
     }
 }
