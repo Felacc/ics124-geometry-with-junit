@@ -45,4 +45,18 @@ public class Circle {
         return true;
         
     }
+    
+    // if circles have any overlap return true
+    // use euclidian distance again
+    // if the euclidian distance between circle centers is less than the sum of their radii
+    // return true
+    public boolean contains (Circle c) {
+        double distanceBetweenCenters = Math.sqrt(
+                Math.pow((c.center.getX() - this.center.getX()), 2)
+                +
+                Math.pow((c.center.getY() - this.center.getY()), 2)
+        );
+        
+        return distanceBetweenCenters <= c.getRadius() + this.radius;
+    }
 }

@@ -61,5 +61,16 @@ public class CircleTest {
         assertEquals(true, containsPoint);
     }
     
+    @Test
+    public void testContainsCircle() {
+        Circle c1 = new Circle();
+        Circle c2 = new Circle(new Point(), 2);
+        
+        assertEquals(true, c2.contains(c1));
+        
+        Circle c3 = new Circle (new Point(10, 10), 1);
+        assertEquals(false, c3.contains(c1));
+        
+    }
     
 }
