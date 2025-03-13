@@ -38,6 +38,14 @@ public class Line {
         );
     }
     
+    // distance from start point and distance from end point should equal line length if on line
+    public boolean contains(Point p) {
+        double d1 = p.distanceTo(this.startPoint); // distance from start
+        double d2 = p.distanceTo(this.endPoint); //distance from end
+        
+        return (d1 + d2) == this.length();
+    }
+    
     
             
 }

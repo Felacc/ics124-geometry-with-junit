@@ -48,5 +48,18 @@ public class LineTest {
     }
     
     
+    @Test
+    public void testContainsPoint() {
+        Point start = new Point();
+        Point end = new Point(0, 10);
+        Line l = new Line(start, end);
+        
+        assertEquals(true, l.contains(new Point(0, 9)));
+        
+        assertEquals(false, l.contains(new Point(1, 1)));
+        
+    }
+    
+    
     
 }
