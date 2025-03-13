@@ -31,11 +31,7 @@ public class Line {
     
     // find euclidian distance
     public double length() {
-        return Math.sqrt(
-        Math.pow(endPoint.getX() - startPoint.getX(), 2)
-                +
-        Math.pow(endPoint.getY() - startPoint.getY(), 2)
-        );
+        return this.startPoint.distanceTo(this.endPoint);
     }
     
     // distance from start point and distance from end point should equal line length if on line
